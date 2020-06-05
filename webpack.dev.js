@@ -12,6 +12,9 @@ module.exports = {
         libraryTarget: 'var',
         library: 'Client'
     },
+    devServer: {
+        contentBase: './dist'
+    },
     module: {
         rules: [
             {
