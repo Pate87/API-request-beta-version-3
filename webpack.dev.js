@@ -7,6 +7,7 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 module.exports = {
     mode: 'development',
     entry: './src/client/index.js',
+    devtool: 'inline-source-map',
     output: {
         libraryTarget: 'var',
         library: 'Client'
