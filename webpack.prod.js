@@ -8,6 +8,7 @@ const TerserPlugin = require('terser-webpack-plugin');
 module.exports = {
     mode: 'production',
     entry: './src/client/index.js',
+    devtool: 'inline-source-map',
     output: {
         libraryTarget: 'var',
         library: 'Client'

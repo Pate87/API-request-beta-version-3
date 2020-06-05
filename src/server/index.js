@@ -1,8 +1,25 @@
 const path = require('path')
 const express = require('express')
 const mockAPIResponse = require('./mockAPI.js')
-const cors = require('cors')
 const bodyParser = require('body-parser')
+
+const app = express()
+
+// to use url encoded values
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({
+  extended: true
+}))
+
+// Corse for cross origin allowance
+const cors = require('cors')
+// to use json
+app.use(cors())
+// to prevent Access-Control-Allow-Origin error
+app.use(function(req, res, next){
+    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
+    next();
+});
 
 // calling API URL
 const aylien = require('aylien_textapi')
@@ -11,17 +28,6 @@ const aylien = require('aylien_textapi')
 // const dotenv = requrire('dotenv')
 const dotenv = require('dotenv').config()
 // dotenv.config()
-
-const app = express()
-
-// to use json
-app.use(cors())
-
-// to use url encoded values
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({
-  extended: true
-}))
 
 // set aylien API credentias
 const textapi = new aylien({
