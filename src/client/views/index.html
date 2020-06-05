@@ -21,9 +21,11 @@
 
                 <h1>Evaluate a news article or text with Aylient Natural Language Processing</h1>
                 
-                <form class="" onsubmit="return handleSubmit(event)">
-                    <input id="name" type="text" name="input" value="" placeholder="Name">
-                    <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return handleSubmit(event)">
+                <form class="" onsubmit="return Client.handleSubmit(event)">
+                    <input id="name" class="inputBox" type="url" name="test-url" value=""
+                        placeholder="https://www.news-source/a-news-article...">
+                    <input type="submit" class="submitBtn" name="" value="submit"
+                        onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
                 </form>
             </section>
 
